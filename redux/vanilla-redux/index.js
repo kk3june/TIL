@@ -55,6 +55,7 @@ const unsubscribe = store.subscribe(listener);
 // render 함수 만들기 : 리액트 render와 달리 이미 만들어진 UI의 속성을 상태에 따라 변경해줄 것
 const render = () => {
   const state = store.getState(); // 현재 상태를 불러옵니다.
+
   //토글 처리
   if (state.toggle) {
     divToggle.classList.add('active');
@@ -66,4 +67,14 @@ const render = () => {
 };
 
 render();
-store.subscribe(listener);
+store.subscribe(render);
+
+divToggle.onClick = () => {
+  store.dispatch(toggleSwitch());
+};
+btnIncrease.onClick = () => {
+  store.dispatch(increase(1));
+};
+btnDecrease.onClick = () => {
+  store.dispatch(decrease());
+};
