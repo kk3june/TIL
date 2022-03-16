@@ -44,4 +44,20 @@ function reducer(state = initialState, action) {
   }
 }
 
+// 스토어 만들기
 const store = createStore(reducer);
+
+// render 함수 만들기 : 리액트 render와 달리 이미 만들어진 UI의 속성을 상태에 따라 변경해줄 것
+const render = () => {
+  const state = store.getState(); // 현재 상태를 불러옵니다.
+  //토글 처리
+  if (state.toggle) {
+    divToggle.classList.add('active');
+  } else {
+    divToggle.classList.remove('active');
+  }
+  //카운터 처리
+  counter.innerText = state.counter;
+};
+
+render();
