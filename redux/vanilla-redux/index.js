@@ -47,6 +47,11 @@ function reducer(state = initialState, action) {
 // 스토어 만들기
 const store = createStore(reducer);
 
+const listener = () => {
+  console.log('상태가 업데이트 됨');
+};
+const unsubscribe = store.subscribe(listener);
+
 // render 함수 만들기 : 리액트 render와 달리 이미 만들어진 UI의 속성을 상태에 따라 변경해줄 것
 const render = () => {
   const state = store.getState(); // 현재 상태를 불러옵니다.
@@ -61,3 +66,4 @@ const render = () => {
 };
 
 render();
+store.subscribe(listener);
