@@ -24,6 +24,7 @@ const initialState = {
 // 리듀서 함수 정의
 // state가 undefined일 때는 initialState를 기본값으로 사용
 function reducer(state = initialState, action) {
+  console.log(action.type);
   // action.type 에 따라 다른 작업 처리함
   switch (action.type) {
     case TOGGLE_SWITCH:
@@ -41,6 +42,8 @@ function reducer(state = initialState, action) {
         ...state,
         counter: state.counter - 1,
       };
+    default:
+      return state;
   }
 }
 
@@ -55,7 +58,6 @@ const unsubscribe = store.subscribe(listener);
 // render 함수 만들기 : 리액트 render와 달리 이미 만들어진 UI의 속성을 상태에 따라 변경해줄 것
 const render = () => {
   const state = store.getState(); // 현재 상태를 불러옵니다.
-
   //토글 처리
   if (state.toggle) {
     divToggle.classList.add('active');
@@ -69,12 +71,12 @@ const render = () => {
 render();
 store.subscribe(render);
 
-divToggle.onClick = () => {
+divToggle.onclick = () => {
   store.dispatch(toggleSwitch());
 };
-btnIncrease.onClick = () => {
+btnIncrease.onclick = () => {
   store.dispatch(increase(1));
 };
-btnDecrease.onClick = () => {
+btnDecrease.onclick = () => {
   store.dispatch(decrease());
 };
