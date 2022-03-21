@@ -1,5 +1,5 @@
-import CounterContainer from './container/CounterContainer';
-import TodosContainer from './container/TodosContainer';
+import CounterContainer from './containers/CounterContainer';
+import TodosContainer from './containers/TodosContainer';
 
 const App = () => {
   return (
