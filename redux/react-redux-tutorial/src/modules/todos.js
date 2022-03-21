@@ -30,7 +30,7 @@ export const remove = (id) => ({
 
 const initialState = {
   input: '',
-  todo: [
+  todos: [
     {
       id: 1,
       text: '리덕스 기초 배우기',
@@ -49,7 +49,7 @@ function todos(state = initialState, action) {
     case CHANGE_INPUT:
       return {
         ...state,
-        input: state.input,
+        input: action.input,
       };
     case INSERT:
       return {
@@ -60,13 +60,13 @@ function todos(state = initialState, action) {
       return {
         ...state,
         todos: state.todos.map((todo) =>
-          todo.id === action.id ? { ...todo, done: !state.done } : todo,
+          todo.id === action.id ? { ...todo, done: !todo.done } : todo,
         ),
       };
     case REMOVE:
       return {
-        ...todos,
-        todo: state.todos.filter((todo) => todo.id !== action.id),
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== action.id),
       };
     default:
       return state;
