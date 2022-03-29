@@ -7,6 +7,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { mainNavbarItems } from './consts/navbarItem';
+import { SportsRugbySharp } from '@mui/icons-material';
 
 const Navbar = () => {
   const drawerWidth = 220;
@@ -18,6 +19,8 @@ const Navbar = () => {
         '& .MuiDrawer-paper': {
           width: drawerWidth,
           boxSizing: 'border-box',
+          backgroundColor: '#101F33',
+          color: 'rgba(255, 255, 255, 0.7)',
         },
       }}
       variant="permanent"
@@ -28,7 +31,9 @@ const Navbar = () => {
       <List>
         {mainNavbarItems.map((text, index) => (
           <ListItem button key={text.id}>
-            <ListItemIcon>{text.icon}</ListItemIcon>
+            <ListItemIcon sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+              {text.icon}
+            </ListItemIcon>
             <ListItemText primary={text.label} />
           </ListItem>
         ))}
