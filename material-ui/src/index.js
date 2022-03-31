@@ -3,11 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Authentification from './pages/Authentification/Authentification';
+import Database from './pages/Database/Database';
+import Storage from './pages/Storage/Storage';
+import Hoisting from './pages/Hoisting/Hoisting';
+import Function from './pages/Function/Function';
+import MachineLearning from './pages/MachineLearning/MachineLearning';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />}>
+        <Route path="authentification" element={<Authentification />} />
+        <Route path="database" element={<Database />} />
+        <Route path="storage" element={<Storage />} />
+        <Route path="hoisting" element={<Hoisting />} />
+        <Route path="function" element={<Function />} />
+        <Route path="machine-learning" element={<MachineLearning />} />
+      </Route>
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
