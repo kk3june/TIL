@@ -1,7 +1,12 @@
 import React from 'react';
+import Grid from '@mui/material/Grid';
 
 const Authentification = () => {
-  return <div>Authentification</div>;
+  return (
+    <Grid item xs={2}>
+      Authentification
+    </Grid>
+  );
 };
 
 export default Authentification;
