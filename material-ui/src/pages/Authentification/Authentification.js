@@ -8,6 +8,9 @@ const Authentification = () => {
     fontSize: 12,
     fontWeight: 600,
     backgroundColor: "red",
+    "&:hover": {
+      backgroundColor: "yellow",
+    },
   };
   return (
     <Grid item xs={8}>
@@ -15,7 +18,12 @@ const Authentification = () => {
       <CommonButton size="large" variant="contained" sx={buttonStyles}>
         Text
       </CommonButton>
-      <CommonButton>Text2</CommonButton>
+      <CommonButton size="large" variant="outlined" sx={buttonStyles}>
+        Text2
+      </CommonButton>
+      <CommonButton size="large" variant="outlined">
+        Text3
+      </CommonButton>
     </Grid>
   );
 };
