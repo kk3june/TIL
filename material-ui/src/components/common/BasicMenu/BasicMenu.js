@@ -2,12 +2,19 @@ import * as React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
-export default function BasicMenu({ anchorEl, open, handleClose }) {
+export default function BasicMenu({
+  anchorEl,
+  open,
+  handleClose,
+  notifications,
+}) {
   return (
     <Menu id="basic-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
-      <MenuItem onClick={handleClose}>Profile</MenuItem>
-      <MenuItem onClick={handleClose}>My account</MenuItem>
-      <MenuItem onClick={handleClose}>Logout</MenuItem>
+      {notifications.map((item) => (
+        <MenuItem id={item.id} onClick={handleClose}>
+          {item.label}
+        </MenuItem>
+      ))}
     </Menu>
   );
 }

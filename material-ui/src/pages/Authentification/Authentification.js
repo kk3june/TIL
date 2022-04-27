@@ -6,7 +6,7 @@ const Authentication = () => {
   return (
     <Grid item xs={8}>
       This is authentication page.
-      <NotificationBell iconColor="primary" badgeContent={0} />
+      <NotificationBell iconColor="primary" badgeContent={3} />
     </Grid>
   );
 };
