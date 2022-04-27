@@ -1,7 +1,14 @@
-import React from 'react';
+import React from "react";
+import Grid from "@mui/material/Grid";
+import NotificationBell from "../../components/common/NotificationBell/NotificationBell";
 
-const Authentification = () => {
-  return <div>Authentification</div>;
+const Authentication = () => {
+  return (
+    <Grid item xs={8}>
+      This is authentication page.
+      <NotificationBell iconColor="primary" badgeContent={3} />
+    </Grid>
+  );
 };
 
-export default Authentification;
+export default Authentication;
