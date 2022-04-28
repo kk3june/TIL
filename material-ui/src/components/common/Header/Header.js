@@ -7,9 +7,9 @@ import HelpIcon from "@mui/icons-material/Help";
 const Header = ({ title }) => {
   const headerStyles = {
     wrapper: {
-      width: "100%",
       display: "flex",
       flexDirection: "column",
+      marginLeft: "320px",
       backgroundColor: "#009be5",
       padding: "20px",
     },
@@ -29,7 +29,6 @@ const Header = ({ title }) => {
       alignItems: "center",
       justifyContent: "space-between",
       marginBottom: "20px",
-      marginLeft: "320px",
     },
     link: {
       fontWeight: 500,
