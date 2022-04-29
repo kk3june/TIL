@@ -3,27 +3,13 @@ import BasicCard from "../../components/BasicCard/BasicCard";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { Box } from "@mui/system";
 import CommonButton from "../../components/common/CommonButton/CommonButton";
-import { IconButton, Grid, Typography } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import GridWrapper from "../../components/GridWrapper/GridWrapper";
+import { cardHeaderStyles } from "./styles";
 
 const Authentication = () => {
   const getHeader = () => {
-    const headerStyles = {
-      wrapper: {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "20px",
-        margin: "20px",
-        height: "65px",
-        backgroundColor: "#f5f5f5",
-        borderBottom: "1px solid rgba(0,0,0,0.12)",
-      },
-      addUserButton: {
-        fontSize: "1.05rem",
-      },
-    };
     const handleChange = (value) => {
       console.log(value);
     };
@@ -33,7 +19,7 @@ const Authentication = () => {
     };
 
     return (
-      <Box sx={headerStyles.wrapper}>
+      <Box sx={cardHeaderStyles.wrapper}>
         <SearchBar
           placeholder="Search by email address, phone number, or user UDI"
           onChange={(event) => handleChange(event.target.value)}
@@ -44,7 +30,7 @@ const Authentication = () => {
             variant="contained"
             size="large"
             onClick={addUser}
-            sx={headerStyles.addUserButton}
+            sx={cardHeaderStyles.addUserButton}
           >
             Add User
           </CommonButton>
