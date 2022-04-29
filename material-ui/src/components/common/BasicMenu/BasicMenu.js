@@ -11,7 +11,7 @@ export default function BasicMenu({
   return (
     <Menu id="basic-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
       {notifications.map((item) => (
-        <MenuItem id={item.id} onClick={handleClose}>
+        <MenuItem key={item.id} id={item.id} onClick={handleClose}>
           {item.label}
         </MenuItem>
       ))}

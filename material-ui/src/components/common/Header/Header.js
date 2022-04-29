@@ -47,7 +47,7 @@ const Header = ({ title }) => {
     <Box sx={headerStyles.wrapper}>
       <Box sx={headerStyles.topRow}>
         <Typography sx={headerStyles.link}>Go to docs</Typography>
-        <NotificationBell iconColor="white" />
+        <NotificationBell iconColor="white" badgeContent={3} />
         <Avatar src="https://mui.com/static/images/avatar/1.jpg" />
       </Box>
       <Box sx={headerStyles.middleRow}>

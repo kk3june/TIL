@@ -1,13 +1,16 @@
 import Navbar from "./components/Navbar/Navbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Grid } from "@mui/material";
 import Header from "./components/common/Header/Header";
 
 function App() {
+  const location = useLocation();
+  const title = location.pathname.replace("/", "");
+
   return (
     <Grid container>
       <Grid item xs={12}>
-        <Header title={"Authentification"} />
+        <Header title={title} />
       </Grid>
       <Navbar />
       <Outlet />
