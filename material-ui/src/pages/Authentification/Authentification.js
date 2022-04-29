@@ -5,6 +5,7 @@ import { Box } from "@mui/system";
 import CommonButton from "../../components/common/CommonButton/CommonButton";
 import { IconButton, Grid, Typography } from "@mui/material";
 import RefreshIcon from "@mui/icons-material/Refresh";
+import GridWrapper from "../../components/GridWrapper/GridWrapper";
 
 const Authentication = () => {
   const getHeader = () => {
@@ -71,19 +72,9 @@ const Authentication = () => {
   };
 
   return (
-    <Grid
-      item
-      xs={12}
-      sx={{
-        marginLeft: "320px",
-        backgroundColor: "#eaeff1",
-        padding: "48px 32px",
-        position: "relative",
-        minHeight: "calc(100vh - 166px)",
-      }}
-    >
+    <GridWrapper>
       <BasicCard header={getHeader()} content={getContent()} />
-    </Grid>
+    </GridWrapper>
   );
 };
 
