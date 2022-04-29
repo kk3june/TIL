@@ -37,7 +37,6 @@ const NotificationBell = ({ iconColor, badgeContent }) => {
         <IconButton
           color={iconColor}
           onClick={badgeContent ? handleOpen : null}
-          anchorEl={anchorEl}
         >
           <Badge badgeContent={badgeContent} color="error">
             <NotificationsIcon />
